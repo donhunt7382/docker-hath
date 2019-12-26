@@ -16,7 +16,7 @@ docker buildx create --use --name mybuild
 docker buildx ls
 docker buildx build \
   --build-arg HATH_VERSION=1.4.2 \
-  --platform linux/amd64 \
+  --platform linux/amd64,linux/arm \
   --file $DOCKERFILE_PATH \
   --tag "${DOCKER_REPO}:${DOCKER_TAG}" \
   .

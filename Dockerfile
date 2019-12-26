@@ -1,12 +1,12 @@
 
-FROM ${TARGETARCH}/openjdk:8-jre-alpine
+FROM ${TARGETARCH}${TARGETVARIANT}/openjdk:8-jre-alpine
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
 ARG TARGETARCH
 ARG BUILDARCH
 RUN echo "I am running on $BUILDARCH, building for $TARGETARCH"
 RUN echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM"
-#COPY qemu-${TARGETPLATFORM}-static /usr/bin
+COPY qemu-${TARGETARCH}-static /usr/bin
 
 LABEL maintainer frosty5689 <frosty5689@gmail.com>
 
