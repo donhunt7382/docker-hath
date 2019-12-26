@@ -11,10 +11,11 @@ source hooks/.config
 #docker buildx create --use --name mybuilder
 
 #docker buildx ls
+export DOCKER_BUILDKIT=1
 
 docker buildx build \
   --build-arg HATH_VERSION=${hath_version} \
-  --platform=linux/arm,linux/arm64,linux/amd64 \
+  --platform linux/arm,linux/arm64,linux/amd64 \
   --file $DOCKERFILE_PATH \
   --tag "${DOCKER_REPO}:${DOCKER_TAG}"  \
   .
