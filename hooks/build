@@ -11,9 +11,14 @@ fi
 #docker buildx create --use --name mybuilder
 
 #docker buildx ls
-docker buildx install
+#docker buildx install
 
-docker build --platform linux/arm,linux/arm64,linux/amd64 --file $DOCKERFILE_PATH --tag "${DOCKER_REPO}:${DOCKER_TAG}" .
+docker buildx build \
+  --build-arg HATH_VERSION=${hath_version}
+  --platform linux/arm,linux/arm64,linux/amd64 \
+  --file $DOCKERFILE_PATH \
+  --tag "${DOCKER_REPO}:${DOCKER_TAG}" \
+  .
 
 echo "✅ images built:"
 echo "⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯"
