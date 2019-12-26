@@ -1,10 +1,4 @@
-# see hooks/build and hooks/.config
-ARG BASE_IMAGE_PREFIX
-FROM ${BASE_IMAGE_PREFIX}openjdk:8-jre-alpine
-
-# see hooks/post_checkout
-ARG ARCH
-COPY qemu-${ARCH}-static /usr/bin
+FROM openjdk:8-jre-alpine
 
 LABEL maintainer frosty5689 <frosty5689@gmail.com>
 
