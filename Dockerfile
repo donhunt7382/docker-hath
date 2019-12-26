@@ -1,5 +1,5 @@
 
-FROM $TARGETPLATFORM/openjdk:8-jre-alpine
+FROM ${TARGETPLATFORM:6}/openjdk:8-jre-alpine
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
 RUN echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM"
