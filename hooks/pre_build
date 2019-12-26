@@ -9,6 +9,6 @@ echo "⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯�
 
 docker run --rm --privileged multiarch/qemu-user-static:register --reset
 
-ls -al /proc/sys/fs/binfmt_misc/
+#ls -al /proc/sys/fs/binfmt_misc/
 
-cat /proc/sys/fs/binfmt_misc/qemu-aarch64
+#cat /proc/sys/fs/binfmt_misc/qemu-aarch64
