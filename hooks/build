@@ -4,15 +4,15 @@ set -euxo pipefail
 echo "🔵 build"
 source hooks/.config
 
-if [ $DOCKER_TAG != "latest" ]; then
-  hath_version=$DOCKER_TAG
-fi
+# if [ $DOCKER_TAG != "latest" ]; then
+#   hath_version=$DOCKER_TAG
+# fi
 
 #docker buildx create --use --name mybuilder
 
 #docker buildx ls
 
-docker buildx \
+docker buildx build \
   --build-arg HATH_VERSION=${hath_version} \
   --platform=linux/arm,linux/arm64,linux/amd64 \
   --file $DOCKERFILE_PATH \
