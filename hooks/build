@@ -13,7 +13,7 @@ fi
 #docker buildx ls
 #docker buildx install
 docker buildx create --use --name mybuild
-
+docker buildx ls
 docker buildx build \
   --build-arg HATH_VERSION=${hath_version} \
   --platform linux/arm,linux/arm64,linux/amd64 \
