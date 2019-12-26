@@ -34,3 +34,5 @@ curl https://github.com/docker/buildx/releases/download/v0.3.1/buildx-v0.3.1.lin
 chmod a+x ~/.docker/cli-plugins/docker-buildx
 
 ls -la
+
+ls -la ~/.docker/cli-plugins
