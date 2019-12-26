@@ -1,4 +1,4 @@
-FROM --platform=$TARGETPLATFORM openjdk:8-jre-alpine
+FROM ${$TARGETPLATFORM}/openjdk:8-jre-alpine
 
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
