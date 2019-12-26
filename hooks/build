@@ -8,11 +8,11 @@ if [ $DOCKER_TAG != "latest" ]; then
   hath_version=$DOCKER_TAG
 fi
 
-docker buildx create --use --name mybuilder
+#docker buildx create --use --name mybuilder
 
-docker buildx ls
+#docker buildx ls
 
-docker build \
+docker buildx \
   --build-arg HATH_VERSION=${hath_version} \
   --platform=linux/arm,linux/arm64,linux/amd64 \
   --file $DOCKERFILE_PATH \
