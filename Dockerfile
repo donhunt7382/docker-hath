@@ -1,5 +1,9 @@
 FROM openjdk:8-jre-alpine
 
+ARG TARGETPLATFORM
+RUN echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM"
+COPY qemu-${TARGETPLATFORM}-static /usr/bin
+
 LABEL maintainer frosty5689 <frosty5689@gmail.com>
 
 RUN apk add --no-cache --update \
