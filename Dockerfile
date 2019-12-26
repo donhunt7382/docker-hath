@@ -1,6 +1,7 @@
-FROM openjdk:8-jre-alpine
+FROM --platform=$TARGETPLATFORM openjdk:8-jre-alpine
 
 ARG TARGETPLATFORM
+ARG BUILDPLATFORM
 RUN echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM"
 COPY qemu-${TARGETPLATFORM}-static /usr/bin
 
